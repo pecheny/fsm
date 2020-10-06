@@ -1,7 +1,5 @@
 package fsm;
 
-import openfl.events.KeyboardEvent;
-import openfl.events.MouseEvent;
 class FSM<S:String, TFSM:FSM<S, TFSM>> {
     private var states:Map<S, State<S, TFSM>> = new Map();
     public var currentStateName(default, null):S;
@@ -52,14 +50,5 @@ class FSM<S:String, TFSM:FSM<S, TFSM>> {
             return;
         state.update(t);
     }
-
-    public function mouseDownHandler(e:MouseEvent):Void {
-        getCurrentState().mouseDownHandler(e);
-    }
-
-    public function keyDownHandler(e:KeyboardEvent):Void {
-        getCurrentState().keyDownHandler(e);
-    }
-
 }
 
