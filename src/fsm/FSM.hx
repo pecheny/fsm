@@ -3,7 +3,7 @@ package fsm;
 class FSM<S:String, TFSM:FSM<S, TFSM>> {
     private var states:Map<S, State<S, TFSM>> = new Map();
     public var currentStateName(default, null):S;
-    var verbose:Bool = false;
+    public var verbose:Bool = false;
 
     public function new(verbose = false) {
         this.verbose = verbose;
